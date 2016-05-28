@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  <body>
+    <div id="container">
+    <h2>Chuck</h2>
+     <ul class="chuck-container">
+      <% for(var i = 0; i < quotes.length; i++) { %>
+          <a href="/chuck/<%=quotes[i].id%>"><img class="quotes" src="<%=quotes[i].img%>"></a>
+      <% } %>
+      </ul>
+    </div>
+    <a href="/chuck/new">Add a Chuxk Norris Image!</a>
+  </body>
+</html>
