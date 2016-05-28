@@ -18,3 +18,17 @@ app.use(methodOverride(function(req, res){
     return method;
   }
 }));
+
+mongoose.connect(db);
+
+
+// CONTROLLERS
+var chuckController = 
+require('./controllers/chuck.js');
+app.use('/chuck', chuckController);
+
+// LISTEN
+app.listen(port);
+console.log('=============================');
+console.log('Server running on PORT CHUCK: ' + port);
+console.log('=============================');
