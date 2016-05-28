@@ -4,13 +4,14 @@
   <link rel="stylesheet" type="text/css" href="../styles/styles.css">
   <body>
     <div id="container">
-    <h2>Chuck</h2>
+    <h2>Items</h2>
      <ul class="chuck-container">
       <% for(var i = 0; i < quotes.length; i++) { %>
           <a href="/chuck/<%=quotes[i].id%>"><img class="quotes" src="<%=quotes[i].img%>"></a>
+          <li class="yayclass"><%=quotes[i].quote_name%></li>%>
       <% } %>
       </ul>
     </div>
-    <a href="/chuck/new">Add a Chuxk Norris Image!</a>
+    <a href="/chuck/new">Add new items!</a>
   </body>
 </html>
