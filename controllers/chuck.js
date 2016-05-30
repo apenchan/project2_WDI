@@ -30,28 +30,41 @@ router.post('/', function(req, res) {
 });
 
 //Show
-router.get('/:id', function(req, res) {
-  console.log(req.params);
-  Quotes.findById(req.params.id, function(err, quotes) {
-    res.render('show.ejs', {quotes});
-  });
-});
-
-// router.get('/:sw_planet_id', function(req, res) {
-// 	var sw_planet_id = req.params.sw_planet_id;
-// 	var response_data;
-// 	request('http://swapi.co/api/planets/' + sw_planet_id, function (error, response, body) {
-// 	  if (!error && response.statusCode == 200) {
-// 	  	console.log('-----------------------------');
-// 	  	console.log('API data below...');
-// 	  	console.log(body);
-// 	  	console.log('-----------------------------');
-// 	    response_data = body;
-// 	  }
-// 	});
-// 	console.log(response_data);
-// 	res.json(response_data);
+// router.get('/:id', function(req, res) {
+//   console.log(req.params);
+//   Quotes.findById(req.params.id, function(err, quotes) {
+//     res.render('show.ejs', {quotes});
+//   });
 // });
 
+// router.route('http://api.icndb.com/jokes/random')
+// .post(function(req, res) {
+// 	var quotes = new Quotes();
+// 	quotes.type = req.body.type;
+
+// 	quotes.save (function(err) {
+// 		if (err)
+// 			res.send(err);
+// 		res.json(quotes);
+// 	});
+// });
+
+router.get('/:id_random_joke', function(req, res) {
+	var id_random_joke = req.params.id_random_joke;
+	// var response_data;
+	request('http://api.icndb.com/jokes/random' + id_random_joke, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+	  	console.log('-----------------------------');
+	  	console.log('API data below...AHHHHHHHHHHHH');
+	  	console.log(body);
+	  	console.log('-----------------------------');
+	    id_random_joke = req.body;
+	    // var response = JSON.parse(body);
+	  }
+	});
+	console.log("please work");
+	console.log(id_random_joke);
+	res.send(id_random_joke);
+});
 
 module.exports = router;
