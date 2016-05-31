@@ -36,3 +36,8 @@ li {
 	display: inline-block;
 }
 
+a{
+	font-size: 10px;
+	display: inline-block;
+	font-family: Verdana;
+}
