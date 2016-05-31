@@ -25,7 +25,7 @@ mongoose.connect(db);
 // CONTROLLERS
 var chuckController = 
 require('./controllers/chuck.js');
-app.use('/chuck', chuckController);
+app.use('/', chuckController);
 
 // var quotesController = 
 // require('./controllers/seed.js');
