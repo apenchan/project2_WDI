@@ -45,8 +45,8 @@ router.get('/random_joke', function(req, res) {
 	  	console.log(typeof x);
 	    random_joke = {
 	    	type: x.type,
-	    	id: x.value.id,
-	    	joke: x.value.joke
+	    	joke: x.value.joke,
+	    	id: x.value.id
 	    }
 	    // console.log(random_joke);
 	    console.log(random_joke);
