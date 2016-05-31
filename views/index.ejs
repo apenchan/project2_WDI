@@ -6,13 +6,12 @@
     <div id="container">
     <h2>Items</h2>
      <ul class="chuck-container">
-      <% for(var i = 0; i < quotes.length; i++) { %>
-          <a href="/chuck/<%=quotes[i].id%>"><img class="quotes" src="<%=quotes[i].img%>"></a>
+      <% for(var i = 0; i < quotes.length; i++) { %>        <a href="/chuck/<%=quotes[i]._id%>"><img class="quotes" src="<%=quotes[i].img%>"></a>
           <li class="yayclass"><%=quotes[i].quote_name%></li>%>
       <% } %>
       </ul>
     </div>
     <a href="/chuck/new">Add new items!</a>
-    <a href="/chuck/search">Search a new Chuck quote!</a>
+    <a href="/chuck/random_joke">Search a new Chuck quote!</a>
   </body>
 </html> 

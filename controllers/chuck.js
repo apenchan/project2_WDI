@@ -12,10 +12,12 @@ router.get('/', function(req,res){
     });
 });
 
+//New
 router.get('/new', function (req, res) {
 	res.render('new.ejs');
 });
 
+//CREATE
 router.post('/', function(req, res) {
   console.log(req.body);
   var quotes = new Quotes(req.body);
@@ -30,10 +32,11 @@ router.post('/', function(req, res) {
 });
 
 //Show
-// router.get('/:id', function(req, res) {
-//   console.log(req.params);
-//   Quotes.findById(req.params.id, function(err, quotes) {
-//     res.render('show.ejs', {quotes});
+// router.get('/:_id', function(req, res) {
+//   console.log(req.params._id);
+//   Quotes.findById(req.params._id, function(err, quotes) {
+//   	console.log(quotes);
+//     res.render('show.ejs', quotes);
 //   });
 // });
 
@@ -62,6 +65,14 @@ router.get('/random_joke', function(req, res) {
 	// console.log("please work");
 	// console.log(random_joke);
 	// res.json(random_joke);
+});
+
+router.get('/:_id', function(req, res) {
+  console.log(req.params._id);
+  Quotes.findById(req.params._id, function(err, quotes) {
+  	console.log(quotes);
+    res.render('show.ejs', {quotes});
+  });
 });
 
 module.exports = router;
