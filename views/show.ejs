@@ -11,6 +11,12 @@
         <ul>
         <li><%=quotes.chuck_type %></li>
         </ul>
+    <a href="/chuck/<%=quotes.id%>/edit">Edit this Chuck</a>
+
+        <form action="/chuck/<%= quotes.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE"/>
+          <button>Delete Me</button>
+        </form>
 </div>
 </body>
 </html>

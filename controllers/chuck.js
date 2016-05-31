@@ -31,15 +31,7 @@ router.post('/', function(req, res) {
   });
 });
 
-//Show
-// router.get('/:_id', function(req, res) {
-//   console.log(req.params._id);
-//   Quotes.findById(req.params._id, function(err, quotes) {
-//   	console.log(quotes);
-//     res.render('show.ejs', quotes);
-//   });
-// });
-
+//to API
 router.get('/random_joke', function(req, res) {
 	// var id_random_joke = req.params.id_random_joke;
 	var random_joke = null;
@@ -67,11 +59,39 @@ router.get('/random_joke', function(req, res) {
 	// res.json(random_joke);
 });
 
-router.get('/:_id', function(req, res) {
-  console.log(req.params._id);
-  Quotes.findById(req.params._id, function(err, quotes) {
+//SHOW
+router.get('/:id', function(req, res) {
+  console.log(req.params.id);
+  Quotes.findById(req.params.id, function(err, quotes) {
   	console.log(quotes);
     res.render('show.ejs', {quotes});
+  });
+});
+
+//EDIT
+router.get('/:id/edit',function(req, res){
+  Quotes.findById(req.params.id, function(err, quotes){
+  	console.log(quotes);
+    res.render('edit.ejs', {quotes});
+  });
+});
+
+router.put('/:id', function(req,res){
+	var query = {"_id": req.params.id};
+	Quotes.findOneAndUpdate(query, req.body, function(err, quotes){
+		if (err) {
+			console.log(err); 
+		} else {
+			res.redirect('/chuck');
+		}
+	});
+});
+
+//Delete
+router.delete('/:id', function(req, res){
+	console.log(req.params.id);
+  Quotes.findByIdAndRemove(req.params.id, function(){
+      res.redirect('/chuck');
   });
 });
 
