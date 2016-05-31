@@ -3,10 +3,32 @@
 	padding: 0;
 	text-align: center;
 }
+
+/*body{
+	margin: 0px;
+	padding: 0px;
+	background-image: url('http://bit.ly/1PgOOM4');
+	background-repeat: no-repeat;
+	background-size: cover;
+}*/
+header{
+	background-image: url("http://www.templateof.com/postpic/2011/06/patriotic-american-flag-header_273635.jpg");
+	width: 100%;
+	height: 80px;
+}
+
+h2 {
+	font-size: 30px;
+	font-family: Verdana;
+	padding: 10px;
+	color: blue;
+	border-color: black;
+}
 img {
 	max-width: 250px;
+	border: 1px solid black;
 }
-ul {
+.chuck-container {
 	list-style: none;
 	display: inline-block;
 }

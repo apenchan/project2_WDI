@@ -49,7 +49,7 @@ router.get('/random_joke', function(req, res) {
 	    	joke: x.value.joke
 	    }
 	    // console.log(random_joke);
-	    res.send(random_joke);
+	    res.render('home.ejs', {random_joke});
 	    // var response = JSON.parse(body);
 
 	  }
