@@ -1,0 +1,15 @@
+* {
+	margin: 15px;
+	padding: 0;
+	text-align: center;
+}
+img {
+	max-width: 250px;
+}
+ul {
+	list-style: none;
+	display: inline-block;
+}
+li {
+	display: inline-block;
+}
