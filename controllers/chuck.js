@@ -49,8 +49,8 @@ router.get('/random_joke', function(req, res) {
 	    	id: x.value.id
 	    }
 	    // console.log(random_joke);
-	    console.log(random_joke);
-	    // res.render('home.ejs', {random_joke});
+	    // console.log(random_joke);
+	    res.render('home.ejs', {random_joke});
 	    // var response = JSON.parse(body);
 
 	  }
