@@ -37,34 +37,31 @@ router.post('/', function(req, res) {
 //   });
 // });
 
-// router.route('http://api.icndb.com/jokes/random')
-// .post(function(req, res) {
-// 	var quotes = new Quotes();
-// 	quotes.type = req.body.type;
-
-// 	quotes.save (function(err) {
-// 		if (err)
-// 			res.send(err);
-// 		res.json(quotes);
-// 	});
-// });
-
-router.get('/:id_random_joke', function(req, res) {
-	var id_random_joke = req.params.id_random_joke;
-	// var response_data;
-	request('http://api.icndb.com/jokes/random' + id_random_joke, function (error, response, body) {
+router.get('/random_joke', function(req, res) {
+	// var id_random_joke = req.params.id_random_joke;
+	var random_joke = null;
+	request('http://api.icndb.com/jokes/random', function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
-	  	console.log('-----------------------------');
-	  	console.log('API data below...AHHHHHHHHHHHH');
-	  	console.log(body);
-	  	console.log('-----------------------------');
-	    id_random_joke = req.body;
+	  	// console.log('-----------------------------');
+	  	// console.log('API data below...AHHHHHHHHHHHH');
+	  	// console.log(body);
+	  	// console.log('-----------------------------');
+	  	var x = JSON.parse(response.body);
+	  	console.log(typeof x);
+	    random_joke = {
+	    	type: x.type,
+	    	id: x.value.id,
+	    	joke: x.value.joke
+	    }
+	    // console.log(random_joke);
+	    res.json(random_joke);
 	    // var response = JSON.parse(body);
+
 	  }
 	});
-	console.log("please work");
-	console.log(id_random_joke);
-	res.send(id_random_joke);
+	// console.log("please work");
+	// console.log(random_joke);
+	// res.json(random_joke);
 });
 
 module.exports = router;
