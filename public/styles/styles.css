@@ -37,7 +37,12 @@ li {
 }
 
 a{
-	font-size: 10px;
+	font-size: 15px;
 	display: inline-block;
 	font-family: Verdana;
+	color: blue;
+}
+a:hover{
+	border-bottom: 4px solid red;
+	padding: 0px;
 }
