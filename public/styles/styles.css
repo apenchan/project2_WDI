@@ -4,13 +4,14 @@
 	text-align: center;
 }
 
-/*body{
-	margin: 0px;
-	padding: 0px;
-	background-image: url('http://bit.ly/1PgOOM4');
+body{
+/*	margin: 0px;
+	padding: 0px;*/
+	background-image: url('https://pixabay.com/static/uploads/photo/2012/04/28/18/01/texas-43792_960_720.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-}*/
+	background-size: 100%;
+}
 header{
 	background-image: url("http://www.templateof.com/postpic/2011/06/patriotic-american-flag-header_273635.jpg");
 	width: 100%;
@@ -21,7 +22,7 @@ h2 {
 	font-size: 30px;
 	font-family: Verdana;
 	padding: 10px;
-	color: blue;
+	color: #2F39A3;
 	border-color: black;
 }
 img {
